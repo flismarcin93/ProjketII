@@ -44,9 +44,9 @@ class Wydarzenie
 
     /**
      * @ORM\ManyToOne(targetEntity="Lokal", inversedBy="wydarzenia")
-     * @ORM\JoinColumn(name=lokal_od", referencedColumnName="id")
+     * @ORM\JoinColumn(name="lokal_id", referencedColumnName="id")
      */
-
+    private $lokal;
 
     /**
      * Get id

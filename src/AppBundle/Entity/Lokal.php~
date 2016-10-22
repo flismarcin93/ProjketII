@@ -46,7 +46,7 @@ class Lokal
     /**
      * @ORM\OneToMany(targetEntity="Wydarzenie", mappedBy="lokal")
      */
-protected $wydarzenia;
+    protected $wydarzenia;
     public function __construct()
     {
         $this->wydarzenia=new ArrayCollection();

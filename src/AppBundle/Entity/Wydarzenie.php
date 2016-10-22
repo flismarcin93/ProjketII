@@ -44,9 +44,9 @@ class Wydarzenie
 
     /**
      * @ORM\ManyToOne(targetEntity="Lokal", inversedBy="wydarzenia")
-     * @ORM\JoinColumn(name=lokal_od", referencedColumnName="id")
+     * @ORM\JoinColumn(name="lokal_id", referencedColumnName="id")
      */
-
+    private $lokal;
 
     /**
      * Get id
@@ -128,5 +128,29 @@ class Wydarzenie
     public function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * Set lokal
+     *
+     * @param \AppBundle\Entity\Lokal $lokal
+     *
+     * @return Wydarzenie
+     */
+    public function setLokal(\AppBundle\Entity\Lokal $lokal = null)
+    {
+        $this->lokal = $lokal;
+
+        return $this;
+    }
+
+    /**
+     * Get lokal
+     *
+     * @return \AppBundle\Entity\Lokal
+     */
+    public function getLokal()
+    {
+        return $this->lokal;
     }
 }
