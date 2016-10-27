@@ -11,12 +11,11 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction($name)
+    public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render(
-            'AppBundle:Front:index.html.twig',
-            array('name' => $name)
-        );
+        return $this->render('default/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
     }
 }
